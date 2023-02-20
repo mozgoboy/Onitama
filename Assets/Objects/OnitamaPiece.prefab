@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1108707586777645436}
   - component: {fileID: 450650748301567946}
   m_Layer: 0
-  m_Name: Onitama_piece
+  m_Name: OnitamaPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
