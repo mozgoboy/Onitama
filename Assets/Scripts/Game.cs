@@ -29,22 +29,22 @@ public class Game : MonoBehaviour
     void Start()
     {
         int[] cardsInGame = new int[5] {Random.Range(0, 32) , Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32) };
-        GameObject firstPlayerCard = CreateCard(allCardNames[cardsInGame[0]], "redLeft", cardsInGame[0]);
+        GameObject firstPlayerCard = CreateCard(allCardNames[cardsInGame[0]], "redLeft", cardsInGame[0],"red");
         if (firstPlayerCard.GetComponent<OnitamaMoveCard>().GetColor() == "blue")
         {
-            bluePlayerMoveCards[2] = CreateCard(allCardNames[cardsInGame[0]], "blueNext", cardsInGame[0]);
+            bluePlayerMoveCards[2] = CreateCard(allCardNames[cardsInGame[0]], "blueNext", cardsInGame[0], "blue");
         }
         else
         {
-            redPlayerMoveCards[2] = CreateCard(allCardNames[cardsInGame[0]], "redNext", cardsInGame[0]);
+            redPlayerMoveCards[2] = CreateCard(allCardNames[cardsInGame[0]], "redNext", cardsInGame[0], "red");
         }
         Destroy(firstPlayerCard);
         redPlayerMoveCards = new GameObject[3];
         bluePlayerMoveCards = new GameObject[3];
-        redPlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[1]],"redLeft",cardsInGame[1]);
-        redPlayerMoveCards[1] = CreateCard(allCardNames[cardsInGame[2]], "redRight", cardsInGame[2]);
-        bluePlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[3]], "blueLeft", cardsInGame[3]);
-        bluePlayerMoveCards[1] = CreateCard(allCardNames[cardsInGame[4]], "blueRight", cardsInGame[4]);
+        redPlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[1]],"redLeft",cardsInGame[1], "red");
+        redPlayerMoveCards[1] = CreateCard(allCardNames[cardsInGame[2]], "redRight", cardsInGame[2], "red");
+        bluePlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[3]], "blueLeft", cardsInGame[3], "blue");
+        bluePlayerMoveCards[1] = CreateCard(allCardNames[cardsInGame[4]], "blueRight", cardsInGame[4], "blue");
 
         redPlayerPieces = new GameObject[] {
             CreatePiece("redKing",2,4), CreatePiece("redPiece",0,4) ,
@@ -68,7 +68,7 @@ public class Game : MonoBehaviour
         //Instantiate(possibleMoveCard, new Vector3(0, 0, -1), Quaternion.identity);
     }
 
-    public GameObject CreateCard (string name, string position, int id)
+    public GameObject CreateCard (string name, string position, int id, string player)
     {
         GameObject obj = Instantiate(possibleMoveCard, new Vector3(0, 0, -1), Quaternion.identity);
         OnitamaMoveCard om = obj.GetComponent<OnitamaMoveCard>();
@@ -76,6 +76,7 @@ public class Game : MonoBehaviour
         om.SetPosition(position);
         om.SetId(id);
         om.GameOn();
+        om.SetPlayer(player);
         om.Activate();
         return obj;
     }

@@ -9,6 +9,7 @@ public class OnitamaMoveCard : MonoBehaviour
     private string color;
     private string position;
     private int id;
+    private string player;
     private bool inGame;
 
     public Sprite aalCard, affeCard, bearCard, dogCard, dracheCard, elefantCard, foxCard, froschCard, gansCard,
@@ -21,41 +22,308 @@ public class OnitamaMoveCard : MonoBehaviour
         if (inGame) {
             controller = GameObject.FindGameObjectWithTag("GameController");
             SetCoords();
+            for (int i = 0; i < 5; i++)
+                for (int j = 0; j < 5; j++)
+                    scheme[i, j] = false;
 
             switch (this.name)
             {
-                case "aalCard": this.GetComponent<SpriteRenderer>().sprite = aalCard; break;
-                case "affeCard": this.GetComponent<SpriteRenderer>().sprite = affeCard; break;
-                case "bearCard": this.GetComponent<SpriteRenderer>().sprite = bearCard; break;
-                case "dogCard": this.GetComponent<SpriteRenderer>().sprite = dogCard; break;
-                case "dracheCard": this.GetComponent<SpriteRenderer>().sprite = dracheCard; break;
-                case "elefantCard": this.GetComponent<SpriteRenderer>().sprite = elefantCard; break;
-                case "foxCard": this.GetComponent<SpriteRenderer>().sprite = foxCard; break;
-                case "froschCard": this.GetComponent<SpriteRenderer>().sprite = froschCard; break;
-                case "gansCard": this.GetComponent<SpriteRenderer>().sprite = gansCard; break;
-                case "giraffeCard": this.GetComponent<SpriteRenderer>().sprite = giraffeCard; break;
-                case "gottesCard": this.GetComponent<SpriteRenderer>().sprite = gottesCard; break;
-                case "hahnCard": this.GetComponent<SpriteRenderer>().sprite = hahnCard; break;
-                case "haseCard": this.GetComponent<SpriteRenderer>().sprite = haseCard; break;
-                case "iguanaCard": this.GetComponent<SpriteRenderer>().sprite = iguanaCard; break;
-                case "kirinCard": this.GetComponent<SpriteRenderer>().sprite = kirinCard; break;
-                case "kobraCard": this.GetComponent<SpriteRenderer>().sprite = kobraCard; break;
-                case "krabbeCard": this.GetComponent<SpriteRenderer>().sprite = krabbeCard; break;
-                case "kranichCard": this.GetComponent<SpriteRenderer>().sprite = kranichCard; break;
-                case "mouseCard": this.GetComponent<SpriteRenderer>().sprite = mouseCard; break;
-                case "ochseCard": this.GetComponent<SpriteRenderer>().sprite = ochseCard; break;
-                case "otterCard": this.GetComponent<SpriteRenderer>().sprite = otterCard; break;
-                case "pandaCard": this.GetComponent<SpriteRenderer>().sprite = pandaCard; break;
-                case "pferdCard": this.GetComponent<SpriteRenderer>().sprite = pferdCard; break;
-                case "phoenixCard": this.GetComponent<SpriteRenderer>().sprite = phoenixCard; break;
-                case "ratCard": this.GetComponent<SpriteRenderer>().sprite = ratCard; break;
-                case "sableCard": this.GetComponent<SpriteRenderer>().sprite = sableCard; break;
-                case "seaCard": this.GetComponent<SpriteRenderer>().sprite = seaCard; break;
-                case "tanukiCard": this.GetComponent<SpriteRenderer>().sprite = tanukiCard; break;
-                case "tigerCard": this.GetComponent<SpriteRenderer>().sprite = tigerCard; break;
-                case "turtleCard": this.GetComponent<SpriteRenderer>().sprite = turtleCard; break;
-                case "viperCard": this.GetComponent<SpriteRenderer>().sprite = viperCard; break;
-                case "wildCard": this.GetComponent<SpriteRenderer>().sprite = wildCard; break;
+                case "aalCard": 
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = aalCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 2] = true;
+                    } 
+                    break;
+                case "affeCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = affeCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 1] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "bearCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = bearCard;
+                        color = "blue";
+                        scheme[2, 3] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "dogCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = dogCard;
+                        color = "blue";
+                        scheme[1, 2] = true;
+                        scheme[1, 3] = true;
+                        scheme[1, 1] = true;
+                    }
+                    break;
+                case "dracheCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = dracheCard;
+                        color = "red";
+                        scheme[1, 1] = true;
+                        scheme[0, 3] = true;
+                        scheme[3, 1] = true;
+                        scheme[4, 3] = true;
+                    }
+                    break;
+                case "elefantCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = elefantCard;
+                        color = "red";
+                        scheme[1, 2] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 2] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "foxCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = foxCard;
+                        color = "red";
+                        scheme[3, 3] = true;
+                        scheme[3, 2] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "froschCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = froschCard;
+                        color = "red";
+                        scheme[0, 2] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 1] = true;
+
+                    } 
+                    break;
+                case "gansCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = gansCard;
+                        color = "blue";
+                        scheme[3, 2] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 1] = true;
+                        scheme[1, 2] = true;
+                    }
+                    break;
+                case "giraffeCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = giraffeCard;
+                        color = "blue";
+                        scheme[2, 1] = true;
+                        scheme[0, 3] = true;
+                        scheme[4, 3] = true;
+                    }
+                    break;
+                case "gottesCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = gottesCard;
+                        color = "red";
+                        scheme[2, 1] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "hahnCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = hahnCard;
+                        color = "red";
+                        scheme[1, 1] = true;
+                        scheme[1, 2] = true;
+                        scheme[3, 2] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "haseCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = haseCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[4, 2] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "iguanaCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = iguanaCard;
+                        color = "red";
+                        scheme[0, 3] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "kirinCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = kirinCard;
+                        color = "red";
+                        scheme[2, 0] = true;
+                        scheme[1, 4] = true;
+                        scheme[3, 4] = true;
+                    }
+                    break;
+                case "kobraCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = kobraCard;
+                        color = "red";
+                        scheme[1, 2] = true;
+                        scheme[3, 1] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "krabbeCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = krabbeCard;
+                        color = "blue";
+                        scheme[0, 2] = true;
+                        scheme[4, 2] = true;
+                        scheme[2, 3] = true;
+                    }
+                    break;
+                case "kranichCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = kranichCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "mouseCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = mouseCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 2] = true;
+                    }
+                    break;
+                case "ochseCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = ochseCard;
+                        color = "blue";
+                        scheme[2, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 2] = true;
+                    }
+                    break;
+                case "otterCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = otterCard;
+                        color = "red";
+                        scheme[4, 2] = true;
+                        scheme[1, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "pandaCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = pandaCard;
+                        color = "red";
+                        scheme[1, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "pferdCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = pferdCard;
+                        color = "red";
+                        scheme[1, 2] = true;
+                        scheme[2, 1] = true;
+                        scheme[2, 3] = true;
+                    }
+                    break;
+                case "phoenixCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = phoenixCard;
+                        color = "blue";
+                        scheme[0, 2] = true;
+                        scheme[4, 2] = true;
+                        scheme[3, 1] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "ratCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = ratCard;
+                        color = "red";
+                        scheme[1, 2] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "sableCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = sableCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[0, 2] = true;
+                        scheme[3, 1] = true;
+
+                    }
+                    break;
+                case "seaCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = seaCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[4, 2] = true;
+                    }
+                    break;
+                case "tanukiCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = tanukiCard;
+                        color = "blue";
+                        scheme[1, 1] = true;
+                        scheme[2, 3] = true;
+                        scheme[4, 3] = true;
+                    }
+                    break;
+                case "tigerCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = tigerCard;
+                        color = "blue";
+                        scheme[2, 1] = true;
+                        scheme[2, 4] = true;
+                    }
+                    break;
+                case "turtleCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = turtleCard;
+                        color = "red";
+                        scheme[1, 1] = true;
+                        scheme[0, 2] = true;
+                        scheme[4, 2] = true;
+                        scheme[3, 3] = true;
+                    }
+                    break;
+                case "viperCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = viperCard;
+                        color = "red";
+                        scheme[0, 2] = true;
+                        scheme[2, 3] = true;
+                        scheme[3, 1] = true;
+                    }
+                    break;
+                case "wildCard":
+                    {
+                        this.GetComponent<SpriteRenderer>().sprite = wildCard;
+                        color = "red";
+                        scheme[1, 2] = true;
+                        scheme[3, 2] = true;
+                        scheme[2, 3] = true;
+                    }
+                    break;
             }
 
         }
@@ -110,6 +378,16 @@ public class OnitamaMoveCard : MonoBehaviour
     public void GameOn()
     {
         inGame = true;
+    }
+
+    public void SetPlayer(string pl)
+    {
+        player = pl;
+    }
+
+    public string GetPlayer()
+    {
+        return player;
     }
 
 }
