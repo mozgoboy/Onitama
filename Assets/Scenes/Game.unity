@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 1617131292}
   m_Layer: 0
   m_Name: Controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,3 +336,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onitamaPiece: {fileID: 7349245490525119952, guid: e8afe4a61c1dc6e449bb2ec541e9a3df, type: 3}
+  possibleMoveCard: {fileID: 383780996729153207, guid: 5d8e3553aa9d6014f9262ddb4049b023, type: 3}
