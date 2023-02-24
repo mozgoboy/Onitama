@@ -28,6 +28,8 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        redPlayerMoveCards = new GameObject[3];
+        bluePlayerMoveCards = new GameObject[3];
         int[] cardsInGame = new int[5] {Random.Range(0, 32) , Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32) };
         GameObject firstPlayerCard = CreateCard(allCardNames[cardsInGame[0]], "redLeft", cardsInGame[0],"red");
         if (firstPlayerCard.GetComponent<OnitamaMoveCard>().GetColor() == "blue")
@@ -39,8 +41,6 @@ public class Game : MonoBehaviour
             redPlayerMoveCards[2] = CreateCard(allCardNames[cardsInGame[0]], "redNext", cardsInGame[0], "red");
         }
         Destroy(firstPlayerCard);
-        redPlayerMoveCards = new GameObject[3];
-        bluePlayerMoveCards = new GameObject[3];
         redPlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[1]],"redLeft",cardsInGame[1], "red");
         redPlayerMoveCards[1] = CreateCard(allCardNames[cardsInGame[2]], "redRight", cardsInGame[2], "red");
         bluePlayerMoveCards[0] = CreateCard(allCardNames[cardsInGame[3]], "blueLeft", cardsInGame[3], "blue");
