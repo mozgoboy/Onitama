@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DataMaps : MonoBehaviour
+public class OnitamaMoveCardDataMaps : MonoBehaviour
 {
     public Sprite aalCard, affeCard, bearCard, dogCard, dracheCard, elefantCard, foxCard, froschCard, gansCard,
         giraffeCard, gottesCard, hahnCard, haseCard, iguanaCard, kirinCard, kobraCard, krabbeCard, kranichCard,

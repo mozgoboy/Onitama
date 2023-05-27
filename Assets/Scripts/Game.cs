@@ -74,7 +74,7 @@ public class Game : MonoBehaviour
     {
         GameObject obj = Instantiate(possibleMoveCard, new Vector3(0, 0, -1), Quaternion.identity);
         OnitamaMoveCard om = obj.GetComponent<OnitamaMoveCard>();
-        DataMaps dM = obj.GetComponent<DataMaps>();
+        OnitamaMoveCardDataMaps dM = obj.GetComponent<OnitamaMoveCardDataMaps>();
         om.name = name;
         om.SetPosition(position);
         om.SetId(id);

@@ -14,9 +14,9 @@ public class OnitamaMoveCard : MonoBehaviour
     private int id;
     private string player;
     private bool inGame;
-    private DataMaps dataMaps;
+    private OnitamaMoveCardDataMaps dataMaps;
 
-    public void Activate(DataMaps dM)
+    public void Activate(OnitamaMoveCardDataMaps dM)
     {
         if (inGame) {
             dM.CreateSprites();
