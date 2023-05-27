@@ -25,12 +25,14 @@ public class Game : MonoBehaviour
     private bool gameOver;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
+
         redPlayerMoveCards = new GameObject[3];
         bluePlayerMoveCards = new GameObject[3];
-        int[] cardsInGame = new int[5] {Random.Range(0, 32) , Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32) };
+        int[] cardsInGame = new int[5] { Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32), Random.Range(0, 32) };
         GameObject firstPlayerCard = CreateCard(allCardNames[cardsInGame[0]], "redLeft", cardsInGame[0],"red");
         if (firstPlayerCard.GetComponent<OnitamaMoveCard>().GetColor() == "blue")
         {
@@ -72,12 +74,13 @@ public class Game : MonoBehaviour
     {
         GameObject obj = Instantiate(possibleMoveCard, new Vector3(0, 0, -1), Quaternion.identity);
         OnitamaMoveCard om = obj.GetComponent<OnitamaMoveCard>();
+        DataMaps dM = obj.GetComponent<DataMaps>();
         om.name = name;
         om.SetPosition(position);
         om.SetId(id);
         om.GameOn();
         om.SetPlayer(player);
-        om.Activate();
+        om.Activate(dM);
         return obj;
     }
 

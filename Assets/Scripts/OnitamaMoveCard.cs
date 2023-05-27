@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
+
 
 public class OnitamaMoveCard : MonoBehaviour
 {
@@ -11,15 +14,12 @@ public class OnitamaMoveCard : MonoBehaviour
     private int id;
     private string player;
     private bool inGame;
+    private DataMaps dataMaps;
 
-    public Sprite aalCard, affeCard, bearCard, dogCard, dracheCard, elefantCard, foxCard, froschCard, gansCard,
-        giraffeCard, gottesCard, hahnCard, haseCard, iguanaCard, kirinCard, kobraCard, krabbeCard, kranichCard,
-        mouseCard, ochseCard, otterCard, pandaCard, pferdCard, phoenixCard, ratCard, sableCard, seaCard, tanukiCard,
-        tigerCard, turtleCard, viperCard, wildCard;
-
-    public void Activate()
+    public void Activate(DataMaps dM)
     {
         if (inGame) {
+            dM.CreateSprites();
             controller = GameObject.FindGameObjectWithTag("GameController");
             SetCoords();
             for (int i = 0; i < 5; i++)
@@ -30,7 +30,7 @@ public class OnitamaMoveCard : MonoBehaviour
             {
                 case "aalCard": 
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = aalCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[1, 3] = true;
@@ -39,7 +39,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "affeCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = affeCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[1, 3] = true;
@@ -49,7 +49,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "bearCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = bearCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[2, 3] = true;
                         scheme[1, 3] = true;
@@ -58,7 +58,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "dogCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = dogCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 2] = true;
                         scheme[1, 3] = true;
@@ -67,7 +67,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "dracheCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = dracheCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 1] = true;
                         scheme[0, 3] = true;
@@ -77,7 +77,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "elefantCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = elefantCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 2] = true;
                         scheme[1, 3] = true;
@@ -87,7 +87,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "foxCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = foxCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[3, 3] = true;
                         scheme[3, 2] = true;
@@ -96,7 +96,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "froschCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = froschCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[0, 2] = true;
                         scheme[1, 3] = true;
@@ -106,7 +106,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "gansCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = gansCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[3, 2] = true;
                         scheme[1, 3] = true;
@@ -116,7 +116,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "giraffeCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = giraffeCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[2, 1] = true;
                         scheme[0, 3] = true;
@@ -125,7 +125,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "gottesCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = gottesCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[2, 1] = true;
                         scheme[1, 3] = true;
@@ -134,7 +134,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "hahnCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = hahnCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 1] = true;
                         scheme[1, 2] = true;
@@ -144,7 +144,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "haseCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = haseCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[4, 2] = true;
@@ -153,7 +153,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "iguanaCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = iguanaCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[0, 3] = true;
                         scheme[2, 3] = true;
@@ -162,7 +162,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "kirinCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = kirinCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[2, 0] = true;
                         scheme[1, 4] = true;
@@ -171,7 +171,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "kobraCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = kobraCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 2] = true;
                         scheme[3, 1] = true;
@@ -180,7 +180,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "krabbeCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = krabbeCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[0, 2] = true;
                         scheme[4, 2] = true;
@@ -189,7 +189,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "kranichCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = kranichCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[2, 3] = true;
@@ -198,7 +198,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "mouseCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = mouseCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[2, 3] = true;
@@ -207,7 +207,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "ochseCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = ochseCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[2, 1] = true;
                         scheme[2, 3] = true;
@@ -216,7 +216,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "otterCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = otterCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[4, 2] = true;
                         scheme[1, 3] = true;
@@ -225,7 +225,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "pandaCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = pandaCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 1] = true;
                         scheme[2, 3] = true;
@@ -234,7 +234,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "pferdCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = pferdCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 2] = true;
                         scheme[2, 1] = true;
@@ -243,7 +243,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "phoenixCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = phoenixCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[0, 2] = true;
                         scheme[4, 2] = true;
@@ -253,7 +253,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "ratCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = ratCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 2] = true;
                         scheme[2, 3] = true;
@@ -262,7 +262,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "sableCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = sableCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[0, 2] = true;
@@ -272,7 +272,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "seaCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = seaCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[2, 3] = true;
@@ -281,7 +281,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "tanukiCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = tanukiCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[1, 1] = true;
                         scheme[2, 3] = true;
@@ -290,7 +290,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "tigerCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = tigerCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "blue";
                         scheme[2, 1] = true;
                         scheme[2, 4] = true;
@@ -298,7 +298,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "turtleCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = turtleCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 1] = true;
                         scheme[0, 2] = true;
@@ -308,7 +308,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "viperCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = viperCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[0, 2] = true;
                         scheme[2, 3] = true;
@@ -317,7 +317,7 @@ public class OnitamaMoveCard : MonoBehaviour
                     break;
                 case "wildCard":
                     {
-                        this.GetComponent<SpriteRenderer>().sprite = wildCard;
+                        this.GetComponent<SpriteRenderer>().sprite = dM.getSprite(this.name);
                         color = "red";
                         scheme[1, 2] = true;
                         scheme[3, 2] = true;
