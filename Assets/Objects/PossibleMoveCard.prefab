@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 794110449790199701}
   - component: {fileID: 3949781594671106717}
   - component: {fileID: -7312616946666276465}
-  - component: {fileID: 861912675885286081}
   m_Layer: 0
   m_Name: PossibleMoveCard
   m_TagString: Untagged
@@ -99,47 +98,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
---- !u!114 &861912675885286081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 383780996729153207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b318d55c87b92044d8e16745d9f9df34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aalCard: {fileID: 21300000, guid: 1e29e6d36f5c0d24b8d2d518d06cf332, type: 3}
-  affeCard: {fileID: 21300000, guid: c78bbb0f5a5a2124bab0b02349588c00, type: 3}
-  bearCard: {fileID: 21300000, guid: 118d0243b4b3704459a7d39245fca88f, type: 3}
-  dogCard: {fileID: 21300000, guid: 133481dfd0ddbef4d867967a1d62d922, type: 3}
-  dracheCard: {fileID: 21300000, guid: 6cf03291bb239ae42af8869af5a8a724, type: 3}
-  elefantCard: {fileID: 21300000, guid: bd90dda1a3254744da1ecd31c675bfdb, type: 3}
-  foxCard: {fileID: 21300000, guid: cde0121c87655d141a35fbe8d23b6ed1, type: 3}
-  froschCard: {fileID: 21300000, guid: 6a90fb7bde08f3148883ba721cb22262, type: 3}
-  gansCard: {fileID: 21300000, guid: aa7f4ac16fd18c644af4d0af7d24454b, type: 3}
-  giraffeCard: {fileID: 21300000, guid: d3d12a0156459054faedb7f88c2dc850, type: 3}
-  gottesCard: {fileID: 21300000, guid: 166494dad44cdd0428d598ead476e269, type: 3}
-  hahnCard: {fileID: 21300000, guid: 5e80089f0e344ee4ea4103fb5b315524, type: 3}
-  haseCard: {fileID: 21300000, guid: 491dc388a00dd194d8f8dee4a4b260cd, type: 3}
-  iguanaCard: {fileID: 21300000, guid: f7fc0c5281821304e8968ce0e5e825cd, type: 3}
-  kirinCard: {fileID: 21300000, guid: eb435c14ec4b17a40bb0138e5a15d565, type: 3}
-  kobraCard: {fileID: 21300000, guid: 53dd40b0a0f5b5742a1a5ef81c35e25a, type: 3}
-  krabbeCard: {fileID: 21300000, guid: a01eb2bc4fe75524e8cba216dc5c7347, type: 3}
-  kranichCard: {fileID: 21300000, guid: e16205b6ab68f4a4381d2f3321412477, type: 3}
-  mouseCard: {fileID: 21300000, guid: 29365b4884783cf4eafd7b70a8f3da57, type: 3}
-  ochseCard: {fileID: 21300000, guid: 9ce06cf584557c04bb73205b88c27e4e, type: 3}
-  otterCard: {fileID: 21300000, guid: d940c8d394aaf56468eb4e8f1cd58681, type: 3}
-  pandaCard: {fileID: 21300000, guid: bb26c2a2642a8474bb796d46cdf115e8, type: 3}
-  pferdCard: {fileID: 21300000, guid: 4287f0ee09c3bc64bbb4cf8f091938d3, type: 3}
-  phoenixCard: {fileID: 21300000, guid: 88ce2cbb4738e3941aba9ddb4dff62e1, type: 3}
-  ratCard: {fileID: 21300000, guid: 0763318a27054b44d8525fdcb5a127d7, type: 3}
-  sableCard: {fileID: 21300000, guid: e680991219f85cd46aa3daf58e48c3b3, type: 3}
-  seaCard: {fileID: 21300000, guid: f0635a984438ae946a6c7249fc7d2e36, type: 3}
-  tanukiCard: {fileID: 21300000, guid: 5efe8d18df9f1154fb59ad764aebb43e, type: 3}
-  tigerCard: {fileID: 21300000, guid: a5276f45e5d4d7e4d89c50ab8bc65e08, type: 3}
-  turtleCard: {fileID: 21300000, guid: d9c161086ef88b04c9029dbe9e011b9c, type: 3}
-  viperCard: {fileID: 21300000, guid: 1f43d8937babd0e4e93c514e6a553e1c, type: 3}
-  wildCard: {fileID: 21300000, guid: a3cf23096208ff344b99ed57f36006e4, type: 3}

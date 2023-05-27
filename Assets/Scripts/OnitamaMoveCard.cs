@@ -14,12 +14,11 @@ public class OnitamaMoveCard : MonoBehaviour
     private int id;
     private string player;
     private bool inGame;
-    private OnitamaMoveCardDataMaps dataMaps;
+    private DataMaps dataMaps;
 
-    public void Activate(OnitamaMoveCardDataMaps dM)
+    public void Activate(DataMaps dM)
     {
         if (inGame) {
-            dM.CreateSprites();
             controller = GameObject.FindGameObjectWithTag("GameController");
             SetCoords();
             for (int i = 0; i < 5; i++)
